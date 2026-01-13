@@ -1,0 +1,15 @@
+.portada {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.portada-interior h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.portada-interior p {
+  color: #a1a1aa;
+  margin-bottom: 1rem;
+}
