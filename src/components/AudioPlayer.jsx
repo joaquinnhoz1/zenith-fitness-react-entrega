@@ -11,7 +11,7 @@ export default function AudioPlayer() {
     if (!audio) return;
 
     audio.loop = true;
-    audio.volume = 0.10;
+    audio.volume = 0.15;
     audio.muted = true;
 
     const tryPlay = async () => {
