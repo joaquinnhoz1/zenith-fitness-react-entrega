@@ -16,7 +16,7 @@ El proyecto fue migrado a componentes React, utilizando props, PropTypes y manej
 Incluye navegación tipo One Page, formulario controlado y estilos separados por componente.
 
 ## Ejecución del proyecto
-1. Clonar el repositorio
+1. Clonar el repositorio:
    git clone https://github.com/joaquinnhoz1/zenith-fitness-react-entrega.git
 2. Instalar dependencias:
    npm install
