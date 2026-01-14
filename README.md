@@ -8,6 +8,7 @@ Consiste en la migración de un sitio web estático a una aplicación en React u
 - Vite
 - JavaScript
 - CSS
+- Font Awesome
 - Bootstrap (uso limitado)
 
 ## Descripción
@@ -16,6 +17,7 @@ Incluye navegación tipo One Page, formulario controlado y estilos separados por
 
 ## Ejecución del proyecto
 1. Clonar el repositorio
+   git clone https://github.com/joaquinnhoz1/zenith-fitness-react-entrega.git
 2. Instalar dependencias:
    npm install
 3. Ejecutar el proyecto:
