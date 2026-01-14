@@ -1,4 +1,4 @@
-import "../styles/cardplan.css";
+import "/styles/cardplan.css";
 
 export default function CardPlan({ imagen, titulo, descripcion, precio }) {
   return (
