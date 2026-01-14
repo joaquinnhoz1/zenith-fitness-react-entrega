@@ -49,12 +49,12 @@ function App() {
 
 
       <Gallery imagenes={[
-        "/src/assets/g1.jpg",
-        "/src/assets/g2.jpg",
-        "/src/assets/g3.jpg",
-        "/src/assets/g4.jpg",
-        "/src/assets/g8.jpg",
-        "/src/assets/g6.jpg"
+        "/assets/g1.jpg",
+        "/assets/g2.jpg",
+        "/assets/g3.jpg",
+        "/assets/g4.jpg",
+        "/assets/g8.jpg",
+        "/assets/g6.jpg"
       ]} />
 
       <Contact />
