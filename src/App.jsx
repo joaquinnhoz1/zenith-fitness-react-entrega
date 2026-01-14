@@ -4,6 +4,7 @@ import CardPlan from "./components/CardPlan";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import FloatingButtons from "./components/FloatingButtons";
 
 function App() {
   return (
@@ -52,13 +53,15 @@ function App() {
         "/src/assets/g2.jpg",
         "/src/assets/g3.jpg",
         "/src/assets/g4.jpg",
-        "/src/assets/g5.jpg",
+        "/src/assets/g8.jpg",
         "/src/assets/g6.jpg"
       ]} />
 
       <Contact />
 
       <Footer />
+      
+      <FloatingButtons />
     </>
   );
 }

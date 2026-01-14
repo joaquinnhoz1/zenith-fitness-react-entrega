@@ -37,6 +37,9 @@ body {
   font-weight: 700;
   margin: 2rem 0 1rem;
   letter-spacing: 0.01em;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 
@@ -138,4 +141,11 @@ body {
     flex-direction: column;
     gap: 20px;
   }
+}
+
+#home,
+#planes,
+#galeria,
+#contacto {
+  scroll-margin-top: 20px;
 }

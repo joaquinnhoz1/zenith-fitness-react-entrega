@@ -1,43 +1,97 @@
+import { useEffect, useState } from "react";
 import "../styles/navbar.css";
 
 export default function Navbar() {
+  const [active, setActive] = useState("home");
+
+  const ids = ["home", "planes", "galeria", "contacto"];
+
+  useEffect(() => {
+    const getNavHeight = () => {
+      const header = document.querySelector(".encabezado");
+      return header ? header.offsetHeight : 0;
+    };
+
+    const computeActive = () => {
+      const navH = getNavHeight();
+      const scrollPos = window.scrollY + navH + 5;
+
+      let current = ids[0];
+
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        if (el.offsetTop <= scrollPos) {
+          current = id;
+        }
+      }
+
+      setActive(current);
+    };
+
+    const onScroll = () => computeActive();
+
+    computeActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", computeActive);
+
+    const onHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (ids.includes(hash)) setActive(hash);
+    };
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", computeActive);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
+
+  const goTo = (id) => (e) => {
+    e.preventDefault();
+    setActive(id);
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", `#${id}`);
+    }
+  };
+
+  const cls = (id) => `nav-link ${active === id ? "active" : ""}`;
+
   return (
     <header className="encabezado">
-      <nav className="navbar navbar-expand-lg navbar-dark sombra-fina sticky-top encabezado">
-        <div className="container d-flex justify-content-center align-items-center">
+      <div className="contenedor nav-inner">
+        <a className="navbar-brand" href="#home" onClick={goTo("home")}>
+          <i className="fa-solid fa-dumbbell"></i> Zenith Fitness
+        </a>
 
-          <a className="navbar-brand fw-bold" href="#home">
-            <i className="fa-solid fa-dumbbell"></i> Zenith Fitness
+        <nav className="nav-links">
+          <a className={cls("home")} href="#home" onClick={goTo("home")}>
+            Inicio
           </a>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#nav"
+          <a className={cls("planes")} href="#planes" onClick={goTo("planes")}>
+            Planes
+          </a>
+          <a
+            className={cls("galeria")}
+            href="#galeria"
+            onClick={goTo("galeria")}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-
-          <div className="collapse navbar-collapse" id="nav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <a className="nav-link active" href="#home">Inicio</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#planes">Planes</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#galeria">Galería</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#contacto">Contacto</a>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </nav>
+            Galería
+          </a>
+          <a
+            className={cls("contacto")}
+            href="#contacto"
+            onClick={goTo("contacto")}
+          >
+            Contacto
+          </a>
+        </nav>
+      </div>
     </header>
   );
 }
