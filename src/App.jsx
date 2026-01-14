@@ -23,21 +23,21 @@ function App() {
   <div className="rejilla-planes">
 
     <CardPlan
-  imagen="/src/assets/g1.jpg"
+  imagen="/assets/g1.jpg"
   titulo="Básico"
   descripcion="Acceso al gimnasio"
   precio="$8.000"
 />
 
 <CardPlan
-  imagen="/src/assets/g2.jpg"
+  imagen="/assets/g2.jpg"
   titulo="Intermedio"
   descripcion="Acceso + clases"
   precio="$12.000"
 />
 
 <CardPlan
-  imagen="/src/assets/g3.jpg"
+  imagen="/assets/g3.jpg"
   titulo="Premium"
   descripcion="Todo incluido"
   precio="$18.000"
