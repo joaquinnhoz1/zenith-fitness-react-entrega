@@ -5,6 +5,8 @@ import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
+import AudioPlayer from "./components/AudioPlayer";
+
 
 function App() {
   return (
@@ -62,6 +64,9 @@ function App() {
       <Footer />
       
       <FloatingButtons />
+
+      <AudioPlayer />
+
     </>
   );
 }
